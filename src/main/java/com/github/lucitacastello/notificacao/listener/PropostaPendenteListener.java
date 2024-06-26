@@ -4,11 +4,13 @@ import com.github.lucitacastello.notificacao.constante.MensagemConstante;
 import com.github.lucitacastello.notificacao.domain.Proposta;
 import com.github.lucitacastello.notificacao.service.NotificacaoSnsService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PropostaPendenteListener {
 
+    @Autowired
     private NotificacaoSnsService notificacaoSnsService;
 
     @RabbitListener(queues = "${rabbitmq.queue.proposta.pendente}")
