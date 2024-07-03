@@ -17,7 +17,7 @@ public class PropostaPendenteListener {
     public void propostaPendente(Proposta proposta){
         //msg que quer mandar via SMS
         String mensagem = String.format(MensagemConstante.PROPOSTA_EM_ANALISE, proposta.getUsuario().getNome());
-        notificacaoSnsService.notificar(mensagem);
+        notificacaoSnsService.notificar(proposta.getUsuario().getTelefone(), mensagem);
 
     }
 
